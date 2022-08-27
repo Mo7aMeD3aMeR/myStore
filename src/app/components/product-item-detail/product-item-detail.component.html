@@ -1,0 +1,24 @@
+
+    <div class="detail-container">
+        <img [src]="item.url">
+        <div class="detail-item">
+        <h3>{{item.name}}</h3>
+        <p>{{item.price}}$</p>
+        <p>Amount:</p>     <select class="form-select"   [(ngModel)]="qunt">
+            <option value="1" selected >1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+    </div>
+    <button type="button" (click)="addtoCart()" value="Add To Cart" class="btn btn-primary" >Add To Cart</button>
+<br/>
+<a class="back-link" routerLink="/productslist"  >Back To Products List</a>
+
+    </div>

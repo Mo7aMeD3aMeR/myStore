@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="cardcontainer">
+            <div class="cart-panel">
+        
+        <app-cart-item *ngFor="let item of cartItems" [item]="item" (_updateAmt)="updatetotalPrice()" > </app-cart-item>
+        </div>
+        </div>
+        <h2>Total:{{Totalprice}}$</h2>
+    </div>
+    <div class="col-md-4">
+        <form #myForm="ngForm" (submit)="onSubmit()" >
+            <label>fullName</label>
+            <input class="form-control" type="text" required minlength="3" placeholder="(minlength 3 characters)" name="fullName" [(ngModel)]="fullName" />
+            <label>Address</label>
+            <input class="form-control" type="text" required minlength="6" placeholder="(minlength 6 characters)" name="Adress" [(ngModel)]="Adress" />
+            <label>CreditCardNo</label>
+            <input class="form-control" type="number" required minlength="16" maxlength="16" placeholder="(16 digit number)" name="CreditCardNo" [(ngModel)]="CreditCardNo" />
+            <p>we'll naver share your payment details</p>
+            <button  class="btn btn-primary" type="submit" [disabled]="myForm.invalid">submit</button>
+        </form>
+    </div>
+</div>
+
